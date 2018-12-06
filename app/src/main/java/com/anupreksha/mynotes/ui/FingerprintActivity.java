@@ -2,6 +2,7 @@ package com.anupreksha.mynotes.ui;
 
 import android.Manifest;
 import android.app.KeyguardManager;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.security.keystore.KeyGenParameterSpec;
@@ -11,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anupreksha.mynotes.R;
 
@@ -55,6 +57,9 @@ public class FingerprintActivity extends AppCompatActivity {
         if (!fingerprintManager.isHardwareDetected()) {
             // If a fingerprint sensor isn’t available, then inform the user that they’ll be unable to use your app’s fingerprint functionality//
             textView.setText("Your device doesn't support fingerprint authentication");
+            Toast.makeText(getApplicationContext(),"No Fingerprint sensor detected.",Toast.LENGTH_LONG).show();
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity(intent);
         }
         //Check whether the user has granted your app the USE_FINGERPRINT permission//
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {
