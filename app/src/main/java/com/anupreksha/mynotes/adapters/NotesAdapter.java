@@ -1,7 +1,6 @@
 package com.anupreksha.mynotes.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -9,13 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.anupreksha.mynotes.AddNewFragment;
-import com.anupreksha.mynotes.MainActivity;
 import com.anupreksha.mynotes.R;
 import com.anupreksha.mynotes.UpdateNoteFragement;
 import com.anupreksha.mynotes.database.DeleteNoteDataInterface;
@@ -25,8 +20,6 @@ import com.anupreksha.mynotes.models.Note;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
@@ -91,7 +84,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                 bundle.putInt("id",id);
                 dialog.setArguments(bundle);
                 dialog.show(fragment,"Update");
-                notifyDataSetChanged();
+                notifyItemChanged(position);
             }
         });
     }

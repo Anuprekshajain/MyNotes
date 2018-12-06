@@ -9,13 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.anupreksha.mynotes.adapters.NotesAdapter;
 import com.anupreksha.mynotes.database.LocalCacheManager;
 import com.anupreksha.mynotes.database.MainViewInterface;
-import com.anupreksha.mynotes.database.DeleteNoteDataInterface;
 import com.anupreksha.mynotes.models.Note;
 
 import java.util.List;

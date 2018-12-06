@@ -11,7 +11,6 @@ import android.widget.EditText;
 
 import com.anupreksha.mynotes.database.LocalCacheManager;
 import com.anupreksha.mynotes.database.UpdateNoteViewInterface;
-import com.anupreksha.mynotes.models.Note;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
