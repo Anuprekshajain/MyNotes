@@ -1,4 +1,4 @@
-package com.anupreksha.mynotes;
+package com.anupreksha.mynotes.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import com.anupreksha.mynotes.R;
 import com.anupreksha.mynotes.database.LocalCacheManager;
-import com.anupreksha.mynotes.database.UpdateNoteViewInterface;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

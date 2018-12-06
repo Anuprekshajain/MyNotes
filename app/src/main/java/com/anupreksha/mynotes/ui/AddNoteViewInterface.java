@@ -1,4 +1,4 @@
-package com.anupreksha.mynotes.database;
+package com.anupreksha.mynotes.ui;
 
 public interface AddNoteViewInterface {
 

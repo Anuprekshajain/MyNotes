@@ -12,10 +12,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.anupreksha.mynotes.R;
-import com.anupreksha.mynotes.UpdateNoteFragement;
-import com.anupreksha.mynotes.database.DeleteNoteDataInterface;
+import com.anupreksha.mynotes.ui.UpdateNoteFragement;
+import com.anupreksha.mynotes.ui.DeleteNoteDataInterface;
 import com.anupreksha.mynotes.database.LocalCacheManager;
-import com.anupreksha.mynotes.database.UpdateNoteViewInterface;
+import com.anupreksha.mynotes.ui.UpdateNoteViewInterface;
 import com.anupreksha.mynotes.models.Note;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.util.List;
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
     Context context;
-    List<Note> noteList = new ArrayList<>();
+    List<Note> noteList;
 
     public NotesAdapter(Context context, List<Note> noteList) {
         this.context = context;

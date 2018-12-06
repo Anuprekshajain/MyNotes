@@ -1,4 +1,4 @@
-package com.anupreksha.mynotes;
+package com.anupreksha.mynotes.ui;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.anupreksha.mynotes.R;
 import com.anupreksha.mynotes.adapters.NotesAdapter;
 import com.anupreksha.mynotes.database.LocalCacheManager;
-import com.anupreksha.mynotes.database.MainViewInterface;
 import com.anupreksha.mynotes.models.Note;
 
 import java.util.List;
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
 

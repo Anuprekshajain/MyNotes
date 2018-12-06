@@ -5,6 +5,10 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import com.anupreksha.mynotes.models.Note;
+import com.anupreksha.mynotes.ui.AddNoteViewInterface;
+import com.anupreksha.mynotes.ui.DeleteNoteDataInterface;
+import com.anupreksha.mynotes.ui.MainViewInterface;
+import com.anupreksha.mynotes.ui.UpdateNoteViewInterface;
 
 import java.util.List;
 
@@ -93,7 +97,7 @@ public class LocalCacheManager {
     }
 
 
-    public void updateNote(final UpdateNoteViewInterface updateNoteViewInterface, final String title,final String noteDesc, final int id) {
+    public void updateNote(final UpdateNoteViewInterface updateNoteViewInterface, final String title, final String noteDesc, final int id) {
         Completable.fromAction(new Action() {
             @Override
             public void run() throws Exception {
