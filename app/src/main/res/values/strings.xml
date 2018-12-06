@@ -7,4 +7,7 @@
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
     <string name="update">Update</string>
+    <string name="title_activity_fingerprint">FingerprintActivity</string>
+    <string name="fingerprint_authentication">Fingerprint Authentication</string>
+    <string name="place_your_fingertip_on_home_button_to_verify_your_identity">Please place your fingertip on home button to verify your identity and login to the app</string>
 </resources>
