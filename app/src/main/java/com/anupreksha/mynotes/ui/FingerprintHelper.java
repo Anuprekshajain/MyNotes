@@ -18,13 +18,13 @@ public class FingerprintHelper extends FingerprintManager.AuthenticationCallback
     private CancellationSignal cancellationSignal;
     private Context context;
 
-    public FingerprintHelper(Context mContext) {
+    FingerprintHelper(Context mContext) {
         context = mContext;
     }
 
     //Implement the startAuth method, which is responsible for starting the fingerprint authentication process//
 
-    public void startAuth(FingerprintManager manager, FingerprintManager.CryptoObject cryptoObject) {
+    void startAuth(FingerprintManager manager, FingerprintManager.CryptoObject cryptoObject) {
 
         cancellationSignal = new CancellationSignal();
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED) {

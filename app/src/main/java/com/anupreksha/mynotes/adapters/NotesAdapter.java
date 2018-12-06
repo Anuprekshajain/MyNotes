@@ -12,13 +12,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.anupreksha.mynotes.R;
-import com.anupreksha.mynotes.ui.UpdateNoteFragement;
-import com.anupreksha.mynotes.ui.DeleteNoteDataInterface;
 import com.anupreksha.mynotes.database.LocalCacheManager;
-import com.anupreksha.mynotes.ui.UpdateNoteViewInterface;
 import com.anupreksha.mynotes.models.Note;
+import com.anupreksha.mynotes.ui.DeleteNoteDataInterface;
+import com.anupreksha.mynotes.ui.UpdateNoteFragement;
+import com.anupreksha.mynotes.ui.UpdateNoteViewInterface;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
@@ -36,10 +35,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
         }
 
-        @Override
-        public void afterdelete(List<Note> notes) {
 
-        }
     };
 
     private UpdateNoteViewInterface updateNoteViewInterface =new UpdateNoteViewInterface() {
@@ -94,11 +90,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         return noteList.size();
     }
 
-    public class NotesViewHolder extends RecyclerView.ViewHolder {
+    class NotesViewHolder extends RecyclerView.ViewHolder {
         ImageButton btndel, btnupd;
         TextView tvTitle, tvNote;
 
-        public NotesViewHolder(View itemView) {
+        NotesViewHolder(View itemView) {
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.textViewTitle);

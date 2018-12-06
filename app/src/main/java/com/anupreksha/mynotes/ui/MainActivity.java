@@ -76,10 +76,6 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
     }
 
 
-    @Override
-    public void onNoteAdded() {
-        Toast.makeText(this,"Note Added",Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void onDataNotAvailable() {
