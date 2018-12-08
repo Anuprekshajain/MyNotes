@@ -32,16 +32,17 @@ public class LocalCacheManager {
         return _instance;
     }
 
-    public LocalCacheManager(Context context) {
+    private LocalCacheManager(Context context) {
         this.context = context;
         db = AppDatabase.getAppDatabase(context);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void getNotes(final MainViewInterface mainViewInterface) {
-        db.noteDao().getAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<Note>>() {
+        db.noteDao().getAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
+                new Consumer<List<Note>>() {
             @Override
-            public void accept(List<Note> notes) throws Exception {
+            public void accept(List<Note> notes) {
                 mainViewInterface.onNotesLoaded(notes);
             }
         });
@@ -75,7 +76,7 @@ public class LocalCacheManager {
     public void onDelete(final DeleteNoteDataInterface deleteNoteDataInterface, final Note note) {
         Completable.fromAction(new Action() {
             @Override
-            public void run() throws Exception {
+            public void run()  {
                 db.noteDao().delete(note);
             }
         }).observeOn(AndroidSchedulers.mainThread())
@@ -100,7 +101,7 @@ public class LocalCacheManager {
     public void updateNote(final UpdateNoteViewInterface updateNoteViewInterface, final String title, final String noteDesc, final int id) {
         Completable.fromAction(new Action() {
             @Override
-            public void run() throws Exception {
+            public void run(){
                 db.noteDao().update(title,noteDesc,id);
             }
         }).observeOn(AndroidSchedulers.mainThread())

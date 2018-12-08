@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
@@ -63,8 +64,7 @@ public class FingerprintHelper extends FingerprintManager.AuthenticationCallback
     //onAuthenticationSucceeded is called when a fingerprint has been successfully matched to one of the fingerprints stored on the user’s device//
     public void onAuthenticationSucceeded(
             FingerprintManager.AuthenticationResult result) {
-
-        Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Successfully Authenticated", Toast.LENGTH_LONG).show();
         Intent intent= new Intent(context,MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
